@@ -1,25 +1,25 @@
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LanguageTranslationModule } from './shared/modules/language-translation/language-translation.module'
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthGuard } from './shared';
+import { SanctionScreeningComponent } from './view-modules/transaction-screening/sanction-screening/sanction-screening.component';
+import { LoginComponent } from './view-modules/login-screen/login/login.component';
+import {CardModule} from 'primeng/card';
+
 
 @NgModule({
-    imports: [
-        CommonModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        LanguageTranslationModule,
-        AppRoutingModule
-    ],
-    declarations: [AppComponent],
-    providers: [AuthGuard],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    SanctionScreeningComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CardModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
